@@ -1,12 +1,12 @@
-import React from 'react'
-import AllPosts from '../../components/AllPosts/AllPosts';
+import React from "react";
+import AllPosts from "../../components/AllPosts/AllPosts";
 
 const home = () => {
   return (
     <>
-    <AllPosts/>
+      <AllPosts />
     </>
-  )
-}
+  );
+};
 
 export default home;

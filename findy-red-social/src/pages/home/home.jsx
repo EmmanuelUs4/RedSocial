@@ -4,9 +4,8 @@ import Footer from "../../common/Footer";
 const home = () => {
   return (
     <>
-      {/* <Header />
-      <Footer/> */}
-
+      <Header />
+      <Footer/>
     </>
   );
 };

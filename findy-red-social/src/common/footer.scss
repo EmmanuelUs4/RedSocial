@@ -1,0 +1,40 @@
+.footer {
+    width: 428px;
+    margin-top: -3rem;
+    border-radius: 0 0 2rem 2rem;
+    position: fixed ;
+     bottom:0;
+  
+  .footer__container {
+    justify-content: space-around;
+    align-items: flex-end;
+    position: relative;
+    z-index: 2; 
+    display: flex;
+ 
+  .footer__button {
+    width: 24px; 
+    height: 24px; 
+    border: none; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    cursor: pointer; 
+    background-color: transparent;
+    margin-bottom: 1rem;
+
+ }
+  }
+}
+  
+
+     .button__footer {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%; 
+        background-color: #FF7674; 
+        color: #fff; 
+        font-size: 24px; 
+        border: none; 
+        cursor: pointer; 
+        margin-bottom: 1rem;
+  }

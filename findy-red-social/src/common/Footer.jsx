@@ -14,20 +14,25 @@ const Footer = () => {
           className="footer__button footer__button--home"
           style={{ backgroundImage: `url(${Home})` }}
         ></button>
+
         <button
           className="footer__button footer__button--seeker"
           style={{ backgroundImage: `url(${Seeker})` }}
         ></button>
+        
         <button className="button__footer">+</button>
+
         <button
           className="footer__button footer__button--notification"
           style={{ backgroundImage: `url(${Notificacion})` }}
         ></button>
+
         <button
           className="footer__button footer__button--profile"
           style={{ backgroundImage: `url(${Profile})` }}
         ></button>
       </div>
+
       <div className="img__footer">
         <img src={ImgFooter} className="footer" alt="footer" />
       </div>

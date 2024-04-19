@@ -1,6 +1,15 @@
 import axios from "axios";
 import { USERS_URL, POSTS_URL, COMMENTS_URL } from "../services/endpoint";
 
+export const createPost = async (postData) => {
+  try {
+    const response = await axios.post(POSTS_URL, postData);
+    return response.data;
+  } catch (error) {
+    console.error("Error creating post:", error);
+    throw error;
+  }
+};
 export const getUsers = async () => {
   try {
     const response = await axios.get(USERS_URL);

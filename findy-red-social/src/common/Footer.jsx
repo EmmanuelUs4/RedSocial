@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 import "../common/footer.scss";
 import Home from "../assets/footer/Home.png";
 import Seeker from "../assets/footer/Seeker.png";
@@ -18,21 +18,20 @@ function FooterButton({ image, onClick }) {
 }
 
 const Footer = () => {
-  const history = useHistory(); // Obtiene la instancia de history
-
-  const goToProfile = () => {
-    // Define la función para navegar a la página de perfil
-    history.push("/profile"); // Redirige al usuario a la página de perfil
-  };
-
   return (
     <div className="footer">
       <div className="footer__container">
+        <Link to="/">
         <FooterButton image={Home} />
+        </Link>
         <FooterButton image={Seeker} />
-        {/* Agrega el botón "+" con el evento onClick para ir a la página de perfil */}
+        <Link to="/details"> 
+          <button className="button__footer">+</button>
+        </Link>
         <FooterButton image={Notificacion} />
-        <FooterButton image={Profile} onClick={goToProfile} />
+        <Link to="/profile"> 
+        <FooterButton image={Profile} />
+        </Link>
       </div>
 
       <div className="img__footer">

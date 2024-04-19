@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import { createPost } from '../../services/services';
 import './newPost.scss';
+import Swal from 'sweetalert2';
+import { useAppContext } from '../../hooks/useAppContext'; 
 
 const validationSchema = Yup.object().shape({
   imageUrl: Yup.string().required('Este campo es obligatorio'),
@@ -24,6 +27,38 @@ function InputField({ name, placeholder, type, errors, touched }) {
 }
 
 function NewPost() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [confirming, setConfirming] = useState(false);
+  const { state, dispatch } = useAppContext(); // Usar el contexto
+
+  useEffect(() => {
+    //  cargar datos al montar el componente
+  }, []);
+
+  const handleReturnClick = () => {
+    if (confirming) {
+      Swal.fire({
+        title: "Publicación en progreso",
+        text: "Perderás tus cambios",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#FF74B7",
+        cancelButtonColor: "#FF7674",
+        confirmButtonText: "Salir"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "/";
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Operación cancelada",
+        text: "Asegúrate de haber compartido la publicación antes de salir",
+        icon: "info"
+      });
+    }
+  };
+
   return (
     <div className='form__Container'>
       <div className='form'>
@@ -34,16 +69,31 @@ function NewPost() {
             tags: '',
           }}
           validationSchema={validationSchema}
-          onSubmit={(values) => {
-            // Logica
-            console.log(values);
+          onSubmit={(values, { resetForm }) => {
+            setIsSubmitting(true);
+            createPost(values)
+              .then(response => {
+                console.log('Post creado exitosamente:', response);
+                Swal.fire({
+                  title: "Publicación compartida con éxito",
+                  icon: "success",
+                });
+                resetForm();
+                setIsSubmitting(false);
+                // Dispatch de la acción para agregar la publicación al estado global
+                dispatch({ type: 'ADD_POST', payload: response.data });
+              })
+              .catch(error => {
+                console.error('Error al crear el post:', error);
+                setIsSubmitting(false);
+              });
           }}
         >
           {({ errors, touched }) => (
             <Form>
               <div>
-                <button className='button__return'>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className='return__button'><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM231 127c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-71 71L376 232c13.3 0 24 10.7 24 24s-10.7 24-24 24l-182.1 0 71 71c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L119 273c-9.4-9.4-9.4-24.6 0-33.9L231 127z"/></svg>
+                <button className='button__return' type="button" onClick={handleReturnClick}>
+                  Salir
                 </button>
               </div>
               <h2 className='text__public'>Nueva publicación</h2>
@@ -74,7 +124,9 @@ function NewPost() {
                 touched={touched}
               />
               <div>
-                <button className='share__button' type="submit">Compartir</button>
+                <button className='share__button' type="submit" disabled={isSubmitting} onClick={() => setConfirming(true)}>
+                  Compartir
+                </button>
               </div>
             </Form>
           )}

@@ -1,11 +1,11 @@
 import React from "react";
-import PostDetails from "../../components/PostDetails/PostDetails";
+import NewPost from "../../components/NewPost/NewPost";
 import Footer from "../../common/Footer";
 
 const details = () => {
   return (
     <>
-      <PostDetails />
+      <NewPost />
       <Footer />
     </>
   );

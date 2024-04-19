@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "../components/layout/Layout";
-import Home from "../pages/home/home";
-import Details from "../pages/details/details";
-import Register from "../pages/register/register"
-import Login from "../pages/login/login";
-import Profile from "../pages/profile/profile"
+import Layout from "../components/Layout/Layout";
+import Home from "../pages/Home/home"
+import Details from "../pages/Details/details";
+import Register from "../pages/Register/Register"
+import Login from "../pages/Login/Login";
+import Profile from "../pages/Profile/Profile"
 
 
 const AppRouter = () => {

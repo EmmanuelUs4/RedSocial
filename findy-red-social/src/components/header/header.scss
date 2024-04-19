@@ -45,7 +45,9 @@
       p {
         font-size: smaller;
       }
-
+.your__story{
+  background-color: red;
+}
       .plus {
         position: absolute;
         margin-left: 1.5rem;
@@ -60,15 +62,9 @@
         z-index: 1;
       }
 
-      #roseanne {
-        margin-left: 1rem;
-      }
+    
     }
   }
 
-  @media screen and (min-width: 374px) and (max-width: 765px) {
-    .container__image--histories div {
-      width: calc(25% - 1rem);
-    }
-  }
+  
 }

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainContainer {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // width: 428px;
+  margin-bottom: 60px;
+
+  .allPostsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    list-style: none;
+
+    .postCard {
+      border-radius: 10px;
+      margin-bottom: 5px;
+      border: 1px solid rgb(0, 0, 0, 0.01);
+      background-color: white;
+
+      .profile {
+        width: 100%;
+        height: 43px;
+
+        .imagePostProfile {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin: 0px 7px 0px 7px;
+          vertical-align: middle;
+          border-color: #ff7674 #ff74b7 #ff74fc #ffbc74; /* Colores del borde */
+          border-width: 2px; /* Grosor del borde */
+          border-style: solid; /* Estilo del borde */
+          // border-image: linear-gradient(to right, #ff7674, #ff7674) 1,
+          //   /* Rojo */ linear-gradient(to right, #ff74b7, #ff74b7) 2,
+          //   /* Rosa */ linear-gradient(to right, #ff74fc, #ff74fc) 3,
+          //   /* Magenta */ linear-gradient(to right, #ffbc74, #ffbc74) 4; /* Naranja */
+
+          /* Este valor indica cómo se debe cortar la imagen para crear los bordes */
+          border-image-slice: 1;
+        }
+
+        .nameProfile {
+          vertical-align: middle;
+          line-height: 50px;
+          font-family: "Balsamiq Sans";
+        }
+      }
+    }
+
+    .imagePost {
+      width: 100%;
+      border-radius: 20px;
+      padding: 3px 7px 10px 7px;
+      box-sizing: border-box;
+    }
+
+    .postInfoOverlay {
+      padding-left: 15px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    .postCard:hover .postInfoOverlay {
+      opacity: 1; /* Mostrar al pasar el ratón sobre la tarjeta */
+    }
+
+    .postInfo {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-right: 15px;
+    }
+
+    .postInfo span {
+      margin-left: 5px;
+      margin-top: 5px;
+      font-family: "Balsamiq Sans";
+      font-size: 10px;
+    }
+
+    .textPosts {
+      padding: 10px 10px 10px 15px;
+      display: block;
+
+      .nameDescription {
+        font-family: "Balsamiq Sans";
+        font-weight: bold;
+        padding-right: 6px;
+      }
+
+      .textContent {
+        font-family: "Balsamiq Sans";
+        font-size: 13px;
+      }
+    }
+  }
+}

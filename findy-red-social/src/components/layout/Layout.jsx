@@ -1,8 +1,9 @@
 import { Outlet } from "react-router-dom";
+import './Layout.scss'
 
 const Layout = () => {
   return (
-    <div>
+    <div className='layoutContainer'>
     
       <Outlet />
     </div>

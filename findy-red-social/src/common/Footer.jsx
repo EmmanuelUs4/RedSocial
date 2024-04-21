@@ -25,7 +25,7 @@ const Footer = () => {
         <FooterButton image={Home} />
         </Link>
         <FooterButton image={Seeker} />
-        <Link to="/details"> 
+        <Link to="/NewPost"> 
           <button className="button__footer">+</button>
         </Link>
         <FooterButton image={Notificacion} />

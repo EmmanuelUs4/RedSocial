@@ -8,36 +8,38 @@
   }
 
   .contenedorDetallePost{
-    // width: 428px;
+    width: 100%;
     height: 100%;
     margin-bottom: 60px;
 
     h3{
-        padding: 20px 15px 30px 15px;
+        padding: 40px 15px 30px 15px;
         font-family: "Balsamiq Sans";
         font-weight: lighter;
         font-size: 13px;
     }
   }
 
-.imageDescription {
-    max-width: 100%;
-    height: auto;
-    border-radius: 30px;
-    box-sizing: border-box;
+  .imageContainer{
     position: relative;
   }
 
+.imageDescription {
+      width: 100%;
+      height: 600px; 
+      object-fit: cover;
+      border-radius: 30px;
+      position: relative;
+  }
+
 .postInfoOverlayDescri {
+    position: absolute;
+    top: 95%;
+    left: 20%;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-    // position: absolute;
-    // top: 41%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    // padding-left: 15px;
     background-color: white ;
     border-radius: 18px;
     width: 60%;
@@ -50,20 +52,16 @@
         background-size: cover;
         margin-right: 10px;
         border-color: #ff7674 #ff74b7 #ff74fc #ffbc74; 
-              border-width: 2px; 
-              border-style: solid; 
-              /* Este valor indica cómo se debe cortar la imagen para crear los bordes */
-              border-image-slice: 1;
+        border-width: 2px; 
+        border-style: solid; 
+        border-image-slice: 1;
+        object-fit: fill;
       }
 
     .postInfoOverlayIcons{
         display: flex;
         align-items: center;
     }
-  }
-
-  .postCard:hover .postInfoOverlay {
-    opacity: 1; /* Mostrar al pasar el ratón sobre la tarjeta */
   }
 
   .postInfo {
@@ -80,44 +78,42 @@
     font-size: 10px;
   }
 
-  .textPosts {
-    padding: 10px 10px 10px 15px;
-    display: block;
-  }
-
   .containerComment{
-    padding-bottom: 50px;
+    width: 100%;
+    max-width: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    // position: fixed;
-    // bottom: 80px;
-    // left: 10%;
-    width: 80%;
-    height: 30px;
-    background-color: white;
-    border-radius: 15px;
+    padding: 10px;
 
     .perfilUser{
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        // background-size: cover;
         margin-right: 10px;
-              /* Este valor indica cómo se debe cortar la imagen para crear los bordes */
-              border-image-slice: 1;
+        border-image-slice: 1;
+        object-fit: fill;
       }
 
-    .textComment {
-        display: flex;
-        align-items: center;
+      .commentSection{
+        width: 100%;
+      }
+
+    .inputCommet {
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 18px;
+      margin-bottom: 10px;
+      padding-right: 30px;
     }
 
-   .textComment input{
-    height: 30px;
-    // width: 100%;
-    border-radius: 18px;
-    background-color: white;
-    border: none;
-   }
+    .inputContainer {
+      position: relative;
+    }
+
+    .iconContainer {
+      position: absolute;
+      right: 10px;
+      top: 42%;
+      transform: translateY(-50%);
+      color: red;
+    }
   }

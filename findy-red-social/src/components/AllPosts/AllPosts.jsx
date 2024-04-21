@@ -133,7 +133,7 @@ function AllPosts() {
                 </div>
                 <div className="postInfo">
                   <FontAwesomeIcon icon={faPaperPlane} />
-                  <span>{item.comments}</span>
+                  <span>{getCommentCount(item.id)}</span>
                 </div>
               </div>
             </div>

@@ -2,19 +2,27 @@ import React from "react";
 import "./header.scss";
 
 import Logo from "../../assets/header/Logo.png";
+import Plus from "../../assets/header/Plus.png";
+import Ellipse from "../../assets/header/Ellipse.png";
 import YourStory from "../../assets/header/YourStory.png";
 import JennieKim from "../../assets/header/JennieKim.png";
 import RoseannePark from "../../assets/header/RoseannePark.png";
 import kimJiSoo from "../../assets/header/kimJiSoo.png";
 import LalisaManoban from "../../assets/header/LalisaManoban.png";
-import Plus from "../../assets/header/Plus.png";
-import Ellipse from "../../assets/header/Ellipse.png";
+
+function Story({ image, name }) {
+  return (
+    <div>
+      <img src={image} alt={name} />
+      <p>{name}</p>
+    </div>
+  );
+}
 
 function Header() {
   return (
     <div className="container">
       <div className="container__image">
-        
         <img className="logo" src={Logo} alt="Logo" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,27 +43,14 @@ function Header() {
 
       <div className="container__image--histories">
         <div>
-        <img src={Plus} alt="plus" className="plus"/>
-        <img src={Ellipse} alt="Ellipse" className="ellipse"/>
-          <img src={YourStory} alt="Your Story" />
-          <p>Your Story</p>
+          <img src={Plus} alt="plus" className="plus"/>
+          <img src={Ellipse} alt="Ellipse" className="ellipse"/>
+          <Story image={YourStory} className="your__story" name="Your Story" />
         </div>
-        <div>
-          <img src={JennieKim} alt="Jennie Kim" />
-          <p>Jennie Kim</p>
-        </div>
-        <div>
-          <img src={RoseannePark} alt="Roseanne Park" id="roseanne"  />
-          <p >Roseanne Park</p>
-        </div>
-        <div>
-          <img src={kimJiSoo} alt="kim Ji-soo" />
-          <p>Kim Ji-soo</p>
-        </div>
-        <div>
-          <img src={LalisaManoban} alt="Lalisa Manoban" />
-          <p>Lalisa man</p>
-        </div>
+        <Story image={JennieKim} name="Jennie Kim" />
+        <Story image={RoseannePark} name="Roseanne Park" />
+        <Story image={kimJiSoo} name="Kim Ji-soo" />
+        <Story image={LalisaManoban} name="Lalisa Man" />
       </div>
     </div>
   );

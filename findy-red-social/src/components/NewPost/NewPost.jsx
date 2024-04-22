@@ -8,7 +8,7 @@ import { useAppContext } from '../../hooks/useAppContext';
 
 const validationSchema = Yup.object().shape({
   imageUrl: Yup.string().required('Este campo es obligatorio'),
-  description: Yup.string().required('Este campo es obligatorio'),
+  content: Yup.string().required('Este campo es obligatorio'),
   tags: Yup.string(),
 });
 
@@ -29,10 +29,11 @@ function InputField({ name, placeholder, type, errors, touched }) {
 function NewPost() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [confirming, setConfirming] = useState(false);
-  const { state, dispatch } = useAppContext(); // Usar el contexto
+  const [postId, setPostId] = useState(1); 
+  const { state, dispatch } = useAppContext(); 
 
   useEffect(() => {
-    //  cargar datos al montar el componente
+    
   }, []);
 
   const handleReturnClick = () => {
@@ -65,13 +66,20 @@ function NewPost() {
         <Formik
           initialValues={{
             imageUrl: '',
-            description: '',
+            content: '',
             tags: '',
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
             setIsSubmitting(true);
-            createPost(values)
+            // Incrementar postId y userId antes de enviar los datos
+            const postData = {
+              ...values,
+              id: postId,
+              userId: postId,
+              likes: [], 
+            };
+            createPost(postData)
               .then(response => {
                 console.log('Post creado exitosamente:', response);
                 Swal.fire({
@@ -80,6 +88,8 @@ function NewPost() {
                 });
                 resetForm();
                 setIsSubmitting(false);
+                // Incrementar postId para la próxima publicación
+                setPostId(prevId => prevId + 1); // Actualizar postId correctamente
                 // Dispatch de la acción para agregar la publicación al estado global
                 dispatch({ type: 'ADD_POST', payload: response.data });
               })
@@ -109,7 +119,7 @@ function NewPost() {
               <p className='text__date'>Agregar descripción</p>
               <InputField
                 type="text"
-                name="description"
+                name="content"
                 placeholder="Descripción"
                 errors={errors}
                 touched={touched}

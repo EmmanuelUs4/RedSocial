@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { createPost } from '../../services/services';
 import './newPost.scss';
 import Swal from 'sweetalert2';
-import { useAppContext } from '../../hooks/useAppContext'; 
+import { useAppContext } from '../../hooks/useAppContext';
 
 const validationSchema = Yup.object().shape({
   imageUrl: Yup.string().required('Este campo es obligatorio'),
@@ -29,12 +29,7 @@ function InputField({ name, placeholder, type, errors, touched }) {
 function NewPost() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [confirming, setConfirming] = useState(false);
-  const [postId, setPostId] = useState(1); 
-  const { state, dispatch } = useAppContext(); 
-
-  useEffect(() => {
-    
-  }, []);
+  const { dispatch } = useAppContext();
 
   const handleReturnClick = () => {
     if (confirming) {
@@ -72,13 +67,15 @@ function NewPost() {
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
             setIsSubmitting(true);
-            // Incrementar postId y userId antes de enviar los datos
+            // Generar un ID aleatorio en números
+            const postId = Math.floor(Math.random() * 100) + 1; // Genera un número aleatorio entre 1 y 100
             const postData = {
               ...values,
               id: postId,
-              userId: postId,
+              userId: 1, 
               likes: [], 
             };
+            // Luego, envía postData al backend
             createPost(postData)
               .then(response => {
                 console.log('Post creado exitosamente:', response);
@@ -88,9 +85,6 @@ function NewPost() {
                 });
                 resetForm();
                 setIsSubmitting(false);
-                // Incrementar postId para la próxima publicación
-                setPostId(prevId => prevId + 1); // Actualizar postId correctamente
-                // Dispatch de la acción para agregar la publicación al estado global
                 dispatch({ type: 'ADD_POST', payload: response.data });
               })
               .catch(error => {

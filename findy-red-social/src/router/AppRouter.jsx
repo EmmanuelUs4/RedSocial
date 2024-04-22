@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout";
-import Home from "../pages/home/home"
+import Home from "../pages/home/home";
 import Details from "../pages/details/details";
-import Register from "../pages/register/register"
+import Register from "../pages/register/register";
 import Login from "../pages/login/login";
 import Profile from "../pages/profile/profile";
 import Post from "../pages/newPost/newPost"
@@ -28,3 +28,4 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
+

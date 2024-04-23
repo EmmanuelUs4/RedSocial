@@ -1,13 +1,18 @@
 import React, { createContext, useContext, useReducer } from "react";
 
 // 1. Crear el contexto
-const PostContext = createContext();
+export const PostContext = createContext();
+export const setSelectedUser = (dispatch, userId) => {
+  dispatch ({type: "setSelectedUser", payload: userId});
+};
 
 // 2. Definir el estado inicial y el reducer
 const initialState = {
   posts: [],
   comments: [],
-  selectedPost: null
+  selectedPost: null,
+  filterCategory: "all",
+  selectedUser: null
 };
 
 const postReducer = (state, action) => {
@@ -31,6 +36,16 @@ const postReducer = (state, action) => {
       return {
         ...state,
         comments: [...state.comments, action.payload],
+      };
+      case "setSelectedUser":
+      return {
+        ...state,
+        selectedUser: action.payload,
+      };
+      case "setFilterCategory":
+      return {
+        ...state,
+        filterCategory: action.category,
       };
     default:
       return state;

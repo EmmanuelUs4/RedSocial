@@ -54,8 +54,9 @@ function AllPosts() {
     return user ? user.profileUrl : "";
   };
 
-  const handleLikeClick = (postId, e) => {
+  const handleLikeClick = (postId, userId, e) => {
     e.stopPropagation();
+    console.log("user ID:", userId);
     const updatedPosts = posts.map((post) => {
       if (post.id === postId) {
         const liked = !post.liked;
@@ -87,6 +88,13 @@ function AllPosts() {
     return postComments.length;
   };
 
+  const handleUserNameClick = (userId, e) => {
+    e.stopPropagation();
+    navigate(`/users/${userId}`);
+    dispatch({ type: "setSelectedUser", payload: userId });
+    console.log("User ID:", userId);
+  }
+
   return (
     <div className="mainContainer">
       <ul className="allPostsContainer">
@@ -104,7 +112,7 @@ function AllPosts() {
                 src={getUserProfileUrl(item.userId)}
                 alt={`Profile for user ${item.userId}`}
               />
-              <span className="nameProfile">{getUserName(item.userId)}</span>
+              <span className="nameProfile" onClick={(e) =>handleUserNameClick(item.userId, e)}>{getUserName(item.userId)}</span>
             </div>
             <div>
               <img
@@ -115,7 +123,7 @@ function AllPosts() {
               <div className="postInfoOverlay">
                 <div
                   className="postInfo"
-                  onClick={(e) => handleLikeClick(item.id, e)}
+                  onClick={(e) => handleLikeClick(item.id, item.userId, e)}
                 >
                   <FontAwesomeIcon
                     icon={faHeart}

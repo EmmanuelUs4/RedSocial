@@ -1,18 +1,20 @@
 import "./userFilter.scss";
 import React, { useState, useEffect } from "react";
 import { usePostContext } from "../PostContex/PostContext";
+import { useNavigate } from "react-router-dom";
 
 const UserFilter = () => {
   const { selectedUser, posts } = usePostContext();
   const userPosts = posts.filter((post) => post.userId === selectedUser);
   const categories = [...new Set(userPosts.map((post) => post.category))];
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.log("Selected User:", selectedUser);
-    const userPostsFiltered = userPosts;
-    setFilteredPosts(userPostsFiltered);
-  }, []);
+    const userPosts = posts.filter((post) => post.userId === selectedUser);
+    setFilteredPosts(userPosts);
+  }, [posts, selectedUser]);
   console.log("Publicaciones filtradas:", filteredPosts);
 
   const handleFilterByCategory = (category) => {
@@ -26,32 +28,33 @@ const UserFilter = () => {
   };
 
   const handleShowAllPosts = () => {
-    console.log("Mostrar todas las publicaciones:");
-    console.log("Cantidad de publicaciones antes de filtrar:",
+    console.log(
+      "Cantidad de publicaciones antes de filtrar:",
       userPosts.length
     );
     setFilteredPosts(userPosts);
   };
 
   const handleFilterByVideo = () => {
-    console.log("Filtrar por videos:");
     const videoPosts = userPosts.filter((post) => post.category === "video");
-    console.log("Cantidad de videos:", videoPosts.length);
     setFilteredPosts(videoPosts);
   };
 
   const handleFilterByAlbum = () => {
-    console.log("Filtrar por álbum:");
     const albumPosts = userPosts.filter((post) => post.category === "album");
-    console.log("Cantidad de álbumes:", albumPosts.length);
     setFilteredPosts(albumPosts);
   };
 
   const handleFilterByTags = () => {
-    console.log("Filtrar por tags:");
     const tagsPosts = userPosts.filter((post) => post.category === "tags");
-    console.log("Cantidad de álbumes:", tagsPosts.length);
     setFilteredPosts(tagsPosts);
+  };
+
+  const handleSelectPost = (postId) => {
+    const selectedPost = filteredPosts.find((post) => post.id === postId);
+    if (selectedPost) {
+      navigate(`/details/${postId}`);
+    }
   };
 
   return (
@@ -73,7 +76,11 @@ const UserFilter = () => {
           <p>No hay publicaciones aún</p>
         ) : (
           filteredPosts.map((post) => (
-            <div className="imageContainer" key={post.id}>
+            <div
+              className="imageContainer"
+              key={post.id}
+              onClick={() => handleSelectPost(post.id)}
+            >
               {post.category === "image" && (
                 <img src={post.imageUrl} alt="Imagen" />
               )}

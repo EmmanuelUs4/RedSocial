@@ -22,8 +22,6 @@ function AllPosts() {
       setUsers(userData);
       dispatch({ type: "setPosts", data: postsData });
       dispatch({ type: "setComments", data: commentsData });
-
-      console.log("Publicaciones cargadas:", postsData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -38,7 +36,11 @@ function AllPosts() {
     const likeCount = getLikeCount(postId);
     const commentCount = getCommentCount(postId);
 
-    const updatedSelectedPost = { ...selectedPost, likes: likeCount, comments: commentCount };
+    const updatedSelectedPost = {
+      ...selectedPost,
+      likes: likeCount,
+      comments: commentCount,
+    };
 
     dispatch({ type: "selectpost", payload: updatedSelectedPost });
     navigate(`/details/${postId}`);
@@ -78,7 +80,14 @@ function AllPosts() {
     const postComments = comments.filter(
       (comment) => comment.postId === postId
     );
+
+    const commentsToShow = postComments.map(comment => ({
+      content: comment.content,
+      userName: getUserName(comment.userId)
+    }));
+
     console.log("Comments for post ID", postId, ":", postComments);
+    alert(JSON.stringify(commentsToShow));
   };
 
   const getCommentCount = (postId) => {
@@ -93,7 +102,7 @@ function AllPosts() {
     navigate(`/users/${userId}`);
     dispatch({ type: "setSelectedUser", payload: userId });
     console.log("User ID:", userId);
-  }
+  };
 
   return (
     <div className="mainContainer">
@@ -112,7 +121,12 @@ function AllPosts() {
                 src={getUserProfileUrl(item.userId)}
                 alt={`Profile for user ${item.userId}`}
               />
-              <span className="nameProfile" onClick={(e) =>handleUserNameClick(item.userId, e)}>{getUserName(item.userId)}</span>
+              <span
+                className="nameProfile"
+                onClick={(e) => handleUserNameClick(item.userId, e)}
+              >
+                {getUserName(item.userId)}
+              </span>
             </div>
             <div>
               <img
@@ -130,7 +144,6 @@ function AllPosts() {
                     style={{ color: item.liked ? "red" : "black" }}
                   />
                   <span>{getLikeCount(item.id)}</span>{" "}
-                  {/* Aquí debería mostrarse el número actual de "me gusta" */}
                 </div>
                 <div
                   className="postInfo"

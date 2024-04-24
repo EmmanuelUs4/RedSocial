@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { usePostContext } from "../PostContex/PostContext";
@@ -9,12 +9,12 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import "./postDetails.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getComments } from "../../services/services";
-import { COMMENTS_URL } from '../../services/endpoint';
+import { COMMENTS_URL } from "../../services/endpoint";
+import Swal from "sweetalert2";
 
 function PostDetails() {
-  const { postId } = useParams(); // Obtener el ID del post de los parámetros de la URL
-  const { posts, comments } = usePostContext();
+  const { postId } = useParams();
+  const { posts, comments, dispatch } = usePostContext();
   const [commentText, setCommentText] = useState("");
 
   // Función para manejar el cambio en el input
@@ -33,12 +33,28 @@ function PostDetails() {
       try {
         await axios.post(COMMENTS_URL, newComment);
         setCommentText("");
-        console.log("Comentario enviado con éxito");
+
+        const response = await axios.get(`${COMMENTS_URL}?postId=${postId}`);
+        const updatedComments = response.data;
+
+        dispatch({ type: "setComments", data: updatedComments });
+
+        Swal.fire({
+          icon: "success",
+          title: "Comentario enviado con éxito",
+        });
       } catch (error) {
-        console.error("Error al enviar el comentario:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error al enviar el comentario",
+          text: "Por favor, intenta de nuevo más tarde.",
+        });
       }
     } else {
-      alert("Por favor, escribe algo antes de enviar el comentario.");
+      Swal.fire({
+        icon: "error",
+        title: "Ups... Escribe algo antes de enviar el comentario",
+      });
     }
   };
 
@@ -102,15 +118,14 @@ function PostDetails() {
                 type="text"
                 placeholder="Añade un comentario..."
                 value={commentText}
-                onChange={handleInputChange} // Manejar cambios en el input
+                onChange={handleInputChange}
                 onKeyDown={(event) => {
-                  // Manejar el evento de presionar una tecla
                   if (event.key === "Enter") {
-                    handleCommentSubmit(); // Enviar el comentario si se presiona Enter
+                    handleCommentSubmit();
                   }
                 }}
               />
-              <div className="iconContainer" onClick={handleCommentSubmit}> {/* Añade el manejador de eventos onClick aquí */}
+              <div className="iconContainer" onClick={handleCommentSubmit}>
                 <FontAwesomeIcon icon={faPaperPlane} />
               </div>
             </div>

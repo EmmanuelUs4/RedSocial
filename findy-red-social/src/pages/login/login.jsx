@@ -31,7 +31,7 @@ function Login() {
         login(user);
         console.log('Inicio de sesión exitoso');
         sessionStorage.setItem('userId', user.id);
-        navigate('/home'); 
+        navigate('/'); 
       } else {
         setError('Nombre de usuario o contraseña incorrectos');
         console.log('Nombre de usuario o contraseña incorrectos');

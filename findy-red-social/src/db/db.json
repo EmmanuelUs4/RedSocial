@@ -5,7 +5,7 @@
       "username": "usuario1",
       "name": "Alicia",
       "email": "usuario1@example.com",
-      "avatar": "https://img.freepik.com/fotos-premium/imagen-fondo-flores_853558-37714.jpg",
+      "profileUrl": "https://img.freepik.com/fotos-premium/imagen-fondo-flores_853558-37714.jpg",
       "followers": [
         2,
         5

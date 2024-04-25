@@ -26,7 +26,6 @@ SASS
 <img src="https://github.com/EmmanuelUs4/RedSocial/assets/120135105/4e886c21-fda0-4c15-bb1f-d2642d563589" alt="redux icon" width="100" height="90">
 Redux
 
-
 <img src="https://github.com/EmmanuelUs4/RedSocial/assets/120135105/2e721f64-9078-4985-86df-f7f5d6906f1a" alt="styled-components icon" width="125" height="100">
 Styled Components
 

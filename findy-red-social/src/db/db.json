@@ -1,0 +1,65 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "usuario1",
+      "name": "Aliciaaaaa",
+      "email": "usuario1@example.com",
+      "avatar": "https://www.mundodeportivo.com/urbantecno/hero/2023/03/imagen-creada-por-ia-de-un-robot-con-un-cerebro-digital.jpg",
+      "followers": [
+        2,
+        5
+      ],
+      "following": [
+        3,
+        4,
+        5
+      ],
+      "posts": [
+        1
+      ],
+      "portrait": "https://res.cloudinary.com/dbktnqag9/image/upload/v1699042193/findy/769933690_233804290_1706x960_c7e6nd.webp",
+      "description": "asdasd",
+      "password": "12345"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "imageUrl": "https://res.cloudinary.com/dbktnqag9/image/upload/v1699042163/findy/D7PHNM3GTBGL3BSSGOV2XENQSY_pfm2ev.avif",
+      "content": ":D Happy moment",
+      "likes": 6,
+      "comments": 0,
+      "tag": [
+        2,
+        3
+      ],
+      "category": "image",
+      "time": "13:00"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "imageUrl": "https://res.cloudinary.com/dbktnqag9/image/upload/v1699042163/findy/D7PHNM3GTBGL3BSSGOV2XENQSY_pfm2ev.avif",
+      "content": ":D Happy moment",
+      "likes": 5,
+      "comments": 0,
+      "tags": [
+        2,
+        3
+      ],
+      "category": "image",
+      "time": "12:00"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": 1,
+      "userId": 2,
+      "content": "¡Hermosa foto!",
+      "time": "14:00"
+    }
+  ]
+}

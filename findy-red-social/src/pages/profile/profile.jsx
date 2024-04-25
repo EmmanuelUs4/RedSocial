@@ -1,7 +1,7 @@
 import React from 'react'
 import UserFilter from '../../components/userFilter/UserFilter';
 
-const profile = () => {
+const Profile = () => {
   return (
     <>
       <h1>otro componente</h1>
@@ -12,4 +12,4 @@ const profile = () => {
   )
 }
 
-export default profile;
+export default Profile;

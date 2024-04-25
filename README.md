@@ -27,6 +27,9 @@ SASS
 Redux
 
 
+<img src="https://github.com/EmmanuelUs4/RedSocial/assets/120135105/2e721f64-9078-4985-86df-f7f5d6906f1a" alt="styled-components icon" width="125" height="100">
+Styled Components
+
 ### Screenshop de la pagina 
 
 

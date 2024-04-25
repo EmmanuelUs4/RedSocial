@@ -1,11 +1,13 @@
 {
   "users": [
     {
-      "id": "1",
-      "username": "usuario1",
-      "name": "Alicia",
-      "email": "usuario1@example.com",
-      "profileUrl": "https://img.freepik.com/fotos-premium/imagen-fondo-flores_853558-37714.jpg",
+      "id": 1,
+      "username": "Jennie Kim",
+      "name": "Jennie Kim",
+      "telephone": "123456789",
+      "email": "Jennie1@gmail.com.com",
+      "password": "password123",
+      "profileUrl": "https://s3-alpha-sig.figma.com/img/79ca/5d93/806da2cb38b43ace6f2e15bc6c2f6da5?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dF9N0ovf9HSY5axVCv4Zy1CEL-yDGlo5PqsXFfh40fmP5osjKDLpSjPPAag3xg7cjsKsfa1SQUKz~l6T1OQLI4GLhGsXiAMOfvuFGjW4RvtidQejXhz83DqwqMppf2bfX9G~JUxm4UkHj6ZIq~Xmggmipo~cjG3fYM-SQszonZ~eHxKjHnDxnWnf5MgZGYUdkM6dKrcO7D9Zmo1RV120b3a9J9N75KiFBkWZcmRgV4LSrOyEHPSNC5X6MZ0nMl0P-vXSz8UYDHFN41ebQYRyqKN-hvh~P9A7yWZKFs8BOPhulcGd8P-P4Aj4CQSjMPG52Cwn61vUKxSjGsmVuH9QSA__",
       "followers": [
         2,
         5
@@ -15,50 +17,99 @@
         4,
         5
       ],
-      "posts": [
-        1
+      "description": "Me encanta la vida"
+    },
+    {
+      "id": 2,
+      "username": "Kim Ji-soo",
+      "name": "Kim Ji-soo",
+      "telephone": "987654321",
+      "password": "password456",
+      "profileUrl": "https://s3-alpha-sig.figma.com/img/003c/8ad0/99550026ab88433c09d47f34757033d8?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XangbJFLI8E554vfh7FMpzvfsA-vQGOw7qs5veyARgsO3rdqZSjzQOX8hd1CwouFzqAT~OTRi6HtYrdYKdniGr5JQxDjNt2moIt53en1s1hL5li-UORY6dWn9hcFedAWmFSOlRClPm~oLcLKvaDfav5A7YwgRLvAejsc4MILMyGkCnVpExJvZDeJHMMrQjjOta6fNS~vTO55BP9td3E23Sf-W7EtPSlDtL7PKxD52ATOzEJseIW2vICQUnlqN-n0Z~i-CewdCJMUFmBdBMgHGC3BqWXNFOWXbKB3SyNCykSIY2YUBZWunkZpDyBLQuQAaV8gmDVxsuHNasY4lydcbA__",
+      "followers": [
+        1,
+        5
       ],
-      "portrait": "https://res.cloudinary.com/dbktnqag9/image/upload/v1699042193/findy/769933690_233804290_1706x960_c7e6nd.webp",
-      "description": "asdasd",
-      "password": "12345"
+      "following": [
+        3,
+        8,
+        5
+      ],
+      "description": "Diviertete!!"
     }
   ],
   "posts": [
     {
-      "id": "1",
+      "id": 1,
       "userId": 1,
-      "imageUrl": "https://res.cloudinary.com/dbktnqag9/image/upload/v1699042163/findy/D7PHNM3GTBGL3BSSGOV2XENQSY_pfm2ev.avif",
-      "content": ":D Happy moment",
-      "likes": 6,
-      "comments": 0,
-      "tag": [
-        2,
-        3
-      ],
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "category": "image",
-      "time": "13:00"
+      "imageUrl": "https://s3-alpha-sig.figma.com/img/0d75/74ae/a75180ac4497e875a99cbb62895b8aa8?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=al7UZ0CzzrvldJ8IF2pOQkYOCHDOmr-JsGyeL5Uu5MD3seZ3kYuCn6Dk4tX0qBs9SueW~JLfW9fWHNWya15S8BDqI~ZBErVsqKVUXYZ1UwGVHjwwJXXDGe0SPtq30E0umzW65VxDUpOGLLKKqWVDzDnNzNPMRu6clAoZtlvX4Brg9Sbb83xGsiHl-67sTTOUR6wM62oNv7D8snBt58dFOMV2sU4Pn9PEkTBAYpXBySt-dBbyLLEtXWoUf2u9BgjaJgjI0qZN50l3MqFqBfRpbYp3QxeCH3Xzj8~fZEQIjfFBO0vnvlRYykI3inol7X4e4ta4mCPBi59t12m4t-ovdQ__",
+      "likes": 10,
+      "tags": "",
+      "time": "14:00"
     },
     {
-      "id": "2",
-      "userId": 1,
-      "imageUrl": "https://res.cloudinary.com/dbktnqag9/image/upload/v1699042163/findy/D7PHNM3GTBGL3BSSGOV2XENQSY_pfm2ev.avif",
-      "content": ":D Happy moment",
-      "likes": 5,
-      "comments": 0,
-      "tags": [
-        2,
-        3
-      ],
+      "id": 2,
+      "userId": 2,
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "category": "image",
-      "time": "12:00"
+      "imageUrl": "https://s3-alpha-sig.figma.com/img/6730/05d6/7e69fcd7cc492288b3df24c78494c3cb?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hqX3PHTW7GiyDC62NsnvJ43FZu~Twg-JrmNv3FzCLs~ClzB2jIedC64kOp31XQsMOWxzvXTnVUkqtEiR8iLdG3IfbNXzUr7~f47jfQFwmrUWWRG7w1AwaN1EkeW-NgF2HoLuVaJvTTg1XrmQOU0ulEgbVQ0P2RsOP7GBgxkkPVBDE12FJ8xOm8rMhV~2AHqoCpPtB3Fa8uSR4WVu8CmsvuSvebePsbth93pRF26E0ZOpRX30py2Lkr-hBOY8FFB4bzsJfF2WsAWCpeXXQhCue5uBSmNwrEnJYN117JeS65SPKRD0gNTA4movLdj3o3AKVEdrZKOV~FB9j5T6tpyzdQ__",
+      "likes": 3,
+      "tags": "",
+      "time": "14:00"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "content": "lindo!!!!",
+      "category": "image",
+      "imageUrl": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg",
+      "tags": "",
+      "likes": 8,
+      "time": "14:00"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "content": "Hermosa ciudad.",
+      "category": "image",
+      "imageUrl": "https://st.depositphotos.com/1473952/3702/i/450/depositphotos_37023819-stock-photo-cathedral-and-balconies.jpg",
+      "tags": "",
+      "likes": 10,
+      "time": "14:00"
+    },
+    {
+      "imageUrl": "https://www.dzoom.org.es/wp-content/uploads/2019/07/fotografia-flores-primavera-consejos.jpg",
+      "content": "Me encanta !!!",
+      "tags": "",
+      "category": "image",
+      "id": 37,
+      "userId": 1,
+      "likes": []
+    },
+    {
+      "imageUrl": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg",
+      "content": "jhiujijoi",
+      "tags": "",
+      "id": 40,
+      "userId": 1,
+      "likes": []
     }
   ],
   "comments": [
     {
-      "id": "1",
+      "id": 1,
       "postId": 1,
       "userId": 2,
-      "content": "¡Hermosa foto!",
+      "content": "¡Gran publicación!",
+      "time": "14:00"
+    },
+    {
+      "id": 2,
+      "postId": 2,
+      "userId": 1,
+      "content": "Me encanta esto!",
       "time": "14:00"
     }
   ]

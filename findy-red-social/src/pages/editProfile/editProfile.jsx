@@ -111,7 +111,7 @@ const EditProfile = () => {
           />
         </article>
         <button className='save' onClick={updateUserInfo}>Guardar cambios</button>
-        <button className='back' onClick={() => navigate(`/`)}>Ya he terminado de editar</button>
+        <button className='back' onClick={() => navigate(`/home`)}>Ya he terminado de editar</button>
       </section>
     </section>
   );

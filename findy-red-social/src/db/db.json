@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Jennie Kim",
       "name": "Jennie Kim",
       "telephone": "123456789",
-      "email": "Jennie1@gmail.com.com",
+      "email": "Jennie1@gmail.com",
       "password": "password123",
       "profileUrl": "https://s3-alpha-sig.figma.com/img/79ca/5d93/806da2cb38b43ace6f2e15bc6c2f6da5?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dF9N0ovf9HSY5axVCv4Zy1CEL-yDGlo5PqsXFfh40fmP5osjKDLpSjPPAag3xg7cjsKsfa1SQUKz~l6T1OQLI4GLhGsXiAMOfvuFGjW4RvtidQejXhz83DqwqMppf2bfX9G~JUxm4UkHj6ZIq~Xmggmipo~cjG3fYM-SQszonZ~eHxKjHnDxnWnf5MgZGYUdkM6dKrcO7D9Zmo1RV120b3a9J9N75KiFBkWZcmRgV4LSrOyEHPSNC5X6MZ0nMl0P-vXSz8UYDHFN41ebQYRyqKN-hvh~P9A7yWZKFs8BOPhulcGd8P-P4Aj4CQSjMPG52Cwn61vUKxSjGsmVuH9QSA__",
       "followers": [
@@ -17,13 +17,15 @@
         4,
         5
       ],
-      "description": "Me encanta la vida"
+      "description": "Me encanta la vida",
+      "avatar": "https://st2.depositphotos.com/4211709/7708/i/450/depositphotos_77085751-stock-photo-flower.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "Kim Ji-soo",
       "name": "Kim Ji-soo",
       "telephone": "987654321",
+      "email": "KimJi@gmail.com",
       "password": "password456",
       "profileUrl": "https://s3-alpha-sig.figma.com/img/003c/8ad0/99550026ab88433c09d47f34757033d8?Expires=1713744000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=XangbJFLI8E554vfh7FMpzvfsA-vQGOw7qs5veyARgsO3rdqZSjzQOX8hd1CwouFzqAT~OTRi6HtYrdYKdniGr5JQxDjNt2moIt53en1s1hL5li-UORY6dWn9hcFedAWmFSOlRClPm~oLcLKvaDfav5A7YwgRLvAejsc4MILMyGkCnVpExJvZDeJHMMrQjjOta6fNS~vTO55BP9td3E23Sf-W7EtPSlDtL7PKxD52ATOzEJseIW2vICQUnlqN-n0Z~i-CewdCJMUFmBdBMgHGC3BqWXNFOWXbKB3SyNCykSIY2YUBZWunkZpDyBLQuQAaV8gmDVxsuHNasY4lydcbA__",
       "followers": [
@@ -40,7 +42,7 @@
   ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "category": "image",
@@ -50,7 +52,7 @@
       "time": "14:00"
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "category": "image",
@@ -60,7 +62,7 @@
       "time": "14:00"
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 2,
       "content": "lindo!!!!",
       "category": "image",
@@ -70,7 +72,7 @@
       "time": "14:00"
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 1,
       "content": "Hermosa ciudad.",
       "category": "image",
@@ -84,7 +86,7 @@
       "content": "Me encanta !!!",
       "tags": "",
       "category": "image",
-      "id": 37,
+      "id": "37",
       "userId": 1,
       "likes": []
     },
@@ -92,21 +94,21 @@
       "imageUrl": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg",
       "content": "jhiujijoi",
       "tags": "",
-      "id": 40,
+      "id": "40",
       "userId": 1,
       "likes": []
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "postId": 1,
       "userId": 2,
       "content": "¡Gran publicación!",
       "time": "14:00"
     },
     {
-      "id": 2,
+      "id": "2",
       "postId": 2,
       "userId": 1,
       "content": "Me encanta esto!",

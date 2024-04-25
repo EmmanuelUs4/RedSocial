@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .contenedorDetallePost{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 70px;
+
+    h3{
+        padding: 40px 15px 30px 15px;
+        font-family: "Balsamiq Sans";
+        font-weight: lighter;
+        font-size: 13px;
+    }
+  }
+
+  .imageContainer{
+    position: relative;
+  }
+
+.imageDescription {
+      width: 100%;
+      height: 600px; 
+      object-fit: cover;
+      border-radius: 30px;
+      position: relative;
+  }
+
+.postInfoOverlayDescri {
+    position: absolute;
+    top: 95%;
+    left: 20%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white ;
+    border-radius: 18px;
+    width: 60%;
+    height: 50px;
+
+    .perfilUser{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-size: cover;
+        margin-right: 10px;
+        border-color: #ff7674 #ff74b7 #ff74fc #ffbc74; 
+        border-width: 2px; 
+        border-style: solid; 
+        border-image-slice: 1;
+        object-fit: fill;
+      }
+
+    .postInfoOverlayIcons{
+        display: flex;
+        align-items: center;
+    }
+  }
+
+  .postInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 15px;
+  }
+
+  .postInfo span {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-family: "Balsamiq Sans";
+    font-size: 10px;
+  }
+
+  .containerComment{
+    width: 100%;
+    max-width: auto;
+    display: flex;
+    padding: 10px;
+
+    .perfilUser{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border-image-slice: 1;
+        object-fit: fill;
+      }
+
+      .commentSection{
+        width: 100%;
+      }
+
+    .inputCommet {
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 18px;
+      margin-bottom: 10px;
+      padding-right: 30px;
+    }
+
+    .inputContainer {
+      position: relative;
+    }
+
+    .iconContainer {
+      position: absolute;
+      right: 10px;
+      top: 42%;
+      transform: translateY(-50%);
+      color: red;
+    }
+  }

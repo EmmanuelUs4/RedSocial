@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Footer from "../../common/Footer";
+import PostDetails from "../../components/postDetails/PostDetails";
 
 const details = () => {
   return (
-    <div>details</div>
-  )
-}
+    <>
+    <PostDetails/>
+      <Footer />
+    </>
+  );
+};
 
 export default details;

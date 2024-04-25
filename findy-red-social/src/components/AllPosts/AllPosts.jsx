@@ -99,7 +99,7 @@ function AllPosts() {
 
   const handleUserNameClick = (userId, e) => {
     e.stopPropagation();
-    navigate(`/users/${userId}`);
+    navigate(`/profile/${userId}`);
     dispatch({ type: "setSelectedUser", payload: userId });
     console.log("User ID:", userId);
   };

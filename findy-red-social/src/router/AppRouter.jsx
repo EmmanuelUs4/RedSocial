@@ -7,7 +7,7 @@ import Register from "../pages/register/register";
 import Login from "../pages/login/login";
 import Profile from "../pages/profile/profile";
 import Post from "../pages/newPost/newPost";
-import User from "../pages/user/users"
+// import User from "../pages/user/users"
 
 
 const AppRouter = () => {
@@ -19,9 +19,9 @@ const AppRouter = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/details/:postId" element={<Details />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:userId" element={<Profile />} />
           <Route path="/newPost" element={<Post/>} />
-          <Route path="/users/:userId" element={<User/>} />
+          {/* <Route path="/users/:userId" element={<User/>} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

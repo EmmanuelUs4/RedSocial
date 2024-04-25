@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { createPost } from '../../services/services';
@@ -67,22 +67,32 @@ function NewPost() {
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
             setIsSubmitting(true);
-            // Generar un ID aleatorio en números
-            const postId = Math.floor(Math.random() * 100) + 1; // Genera un número aleatorio entre 1 y 100
+            const mediaType = values.imageUrl.match(/\.(jpeg|jpg|png|gif|mp4|mov|avi)$/i) || values.imageUrl.includes('youtube.com') ? 'video' : 'image';
+            const postId = Math.floor(Math.random() * 100) + 1;
             const postData = {
               ...values,
               id: postId,
               userId: 1, 
-              likes: [], 
+              likes: []
+              // mediaType: mediaType, //informa si es imagen o video 
             };
-            // Luego, envía postData al backend
+
             createPost(postData)
               .then(response => {
                 console.log('Post creado exitosamente:', response);
-                Swal.fire({
-                  title: "Publicación compartida con éxito",
-                  icon: "success",
-                });
+
+                if (mediaType === 'video') {
+                  Swal.fire({
+                    title: "Video compartido con éxito",
+                    icon: "success",
+                  });
+                } else {
+                  Swal.fire({
+                    title: "Imagen compartida con éxito",
+                    icon: "success",
+                  });
+                }
+
                 resetForm();
                 setIsSubmitting(false);
                 dispatch({ type: 'ADD_POST', payload: response.data });

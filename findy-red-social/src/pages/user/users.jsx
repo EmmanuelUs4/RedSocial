@@ -1,11 +1,14 @@
 import React from "react";
 import "./users.scss";
 import UserFilter from "../../components/userFilter/UserFilter";
+import HeaderProfile from "../../components/headerProfile/HeaderProfile";
 
 const users = () => {
   return (
     <>
-      <h1>otro componente</h1>
+      <div>
+      <HeaderProfile />
+      </div>
       <div className="containerFilter">
         <UserFilter />
       </div>

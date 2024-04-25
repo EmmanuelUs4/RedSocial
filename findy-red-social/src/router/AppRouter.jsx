@@ -16,12 +16,12 @@ const AppRouter = () => {
       <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/users/:userId" element={<User/>} />
+          <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/details/:postId" element={<Details />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/newPost" element={<Post/>} />
-          <Route path="/users/:userId" element={<User/>} />
         </Route>
       </Routes>
     </BrowserRouter>

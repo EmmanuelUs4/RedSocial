@@ -47,12 +47,12 @@ function AllPosts() {
   };
 
   const getUserName = (userId) => {
-    const user = users.find((user) => user.id === parseInt(userId));
+    const user = users.find((user) => user.id == parseInt(userId));
     return user ? user.name : "Unknown User";
   };
 
   const getUserProfileUrl = (userId) => {
-    const user = users.find((user) => user.id === parseInt(userId));
+    const user = users.find((user) => user.id == parseInt(userId));
     return user ? user.profileUrl : "";
   };
 

@@ -5,11 +5,13 @@
 }
 
 .all__container{
-    height: 100vh;
-    background-color: rgba(255,118,116,21%);
+    height: 120vh;
+    background: linear-gradient(to top right, #ff7674, #ff74b7, #ff74fc, #ffbc74);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
+
 
 }
 
@@ -35,8 +37,8 @@ Form{
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
-    background-color: rgba(255,118,116,21%);
-    width: 40%;
+    background-color: rgba(255, 118, 116, 0.742);
+    width: 90%;
     padding: 3%;
     border-radius: 18px;
     gap: 2rem;
@@ -48,15 +50,18 @@ Form{
         width: 50%;
         gap: 0.5rem;
 
-        input{
-            border: none;
-            background-color: transparent;
-            border-bottom: 1px black solid;
-            
-        }
-        input:focus {
-            outline: none;
-          }
+    
+    input {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        border-bottom: 1px solid black;
+        cursor: default;
+      }
+      
+    input:focus {
+        outline: none;
+    }
         
     }
     .buttons__container{
@@ -66,22 +71,21 @@ Form{
         align-items: center;
         gap: 1rem;
 
-        button{
-            background-color: rgba(255, 118, 116, 0.678);
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
             border: none;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        
-        button:hover {
-          cursor: pointer;
-          transform: scale(1.05);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+            background-color: #FF7674;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+            transition: transform 0.3s ease; /* Agregar transición */
+          }
+          
+          button:hover {
+            cursor: pointer;
+            transform: scale(1.05); /* Hacer el botón un poco más grande al pasar el cursor */
+          }
 
         p{
             transition: transform 0.2s, box-shadow 0.2s;
@@ -94,4 +98,8 @@ Form{
 
 }
 
-
+@media screen and (min-width: 426px) and (max-width: 1990px) {
+    Form{
+        width: 60%;
+    }
+}

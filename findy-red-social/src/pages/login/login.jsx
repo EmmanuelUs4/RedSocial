@@ -31,7 +31,7 @@ function Login() {
         login(user);
         console.log('Inicio de sesión exitoso');
         sessionStorage.setItem('userId', user.id);
-        navigate('/profile'); 
+        navigate('/home'); 
       } else {
         setError('Nombre de usuario o contraseña incorrectos');
         console.log('Nombre de usuario o contraseña incorrectos');
@@ -68,13 +68,13 @@ function Login() {
               <ErrorMessage name="username" component="div" className="error" />
             </article>
             <article className='info__article'>
-              <label className='password__label' htmlFor="password">Password</label>
+              <label className='password__label' htmlFor="password">Contraseña</label>
               <Field className='password__input' type="password" name="password" />
               <ErrorMessage name="password" component="div" className="error" />
             </article>
             <article className='buttons__container'>
-              <button className='buttons__container--login__button' type="submit" disabled={isSubmitting}>Login</button>
-              <p className='buttons__container--register__button'>Register</p>
+              <button className='buttons__container--login__button' type="submit" disabled={isSubmitting}>Entrar</button>
+              <p className='buttons__container--register__button'>Registrarse</p>
             </article>
           </Form>
         )}

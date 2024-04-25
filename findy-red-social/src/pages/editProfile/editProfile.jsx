@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './editProfile.scss';
+import { useNavigate } from 'react-router-dom';
 
 const EditProfile = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     name: '',
     username: '',
     description: '',
-    avatar: '' // Agregar avatar al estado de usuario
+    profileUrl: ''
   });
-  const [newAvatarUrl, setNewAvatarUrl] = useState(''); // Estado para la nueva URL del avatar
+  const [newProfileUrl, setNewProfileUrl] = useState('');
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -43,9 +45,9 @@ const EditProfile = () => {
   };
 
   const handleAvatarChange = () => {
-    const newAvatarUrl = prompt('Enter new avatar URL:');
-    if (newAvatarUrl) {
-      setUserData({ ...userData, avatar: newAvatarUrl }); // Actualizar el estado de usuario con la nueva URL del avatar
+    const newProfileUrl = prompt('Enter new avatar URL:');
+    if (newProfileUrl) {
+      setUserData({ ...userData, avatar: newProfileUrl }); // Actualizar el estado de usuario con la nueva URL del avatar
     }
   };
 
@@ -57,8 +59,7 @@ const EditProfile = () => {
 
   const updateUserInfo = async () => {
     try {
-      // Actualizar la información del usuario, incluyendo el avatar si se proporcionó una nueva URL
-      const updatedUserData = newAvatarUrl ? { ...userData, avatar: newAvatarUrl } : userData;
+      const updatedUserData = newProfileUrl ? { ...userData, avatar: newProfileUrl } : userData;
       await axios.put(`http://localhost:3000/users/${userData.id}`, updatedUserData);
       alert('User information updated successfully');
     } catch (error) {
@@ -80,7 +81,7 @@ const EditProfile = () => {
 
       <section className='info__section'>
         <article className='name__article info__article'>
-          <label htmlFor="Name" className='name__label'>Name</label>
+          <label htmlFor="Name" className='name__label'>Nombre</label>
           <input
             type="text"
             value={userData.name}
@@ -100,7 +101,7 @@ const EditProfile = () => {
           />
         </article>
         <article className='description__article info__article'>
-          <label htmlFor="Description" className='description__label'>Description</label>
+          <label htmlFor="Description" className='description__label'>Descripción</label>
           <input
             type="text"
             value={userData.description}
@@ -109,7 +110,8 @@ const EditProfile = () => {
             className='description__input'
           />
         </article>
-        <button onClick={updateUserInfo}>Save</button>
+        <button className='save' onClick={updateUserInfo}>Guardar cambios</button>
+        <button className='back' onClick={() => navigate('/profile')}>Ya he terminado de editar</button>
       </section>
     </section>
   );
